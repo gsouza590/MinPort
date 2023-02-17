@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  /* Color mode (hue , saturation, lightness)*/
+  --hue: 207;
+  --sat: 90%;
+  --lig: 61%;
+
+  --first-color: hsl(var(--hue), var(--sat), var(--lig));
+  --first-color-alt: hsl(
+    var(--hue),
+    var(--sat),
+    57%
+  ); /* diminiur lig -4% deixa um tom mais escuro*/
+  --title-color: hsl(var(--hue), 12%, 15%);
+  --text-color: hsl(var(--hue), 12%, 45%);
+  --text-color-light: hsl(var(--hue), 8%, 75%);
+  --text-color-lighten: hsl(var(--hue), 8%, 92%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: white;
+  /* Font*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+}
+
+@media screen and(min-width:968px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/* Reset*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: 600;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Css Class*/
+
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Profile*/
+
+.profile {
+  position: relative;
+  padding-top: 3.5rem;
+}
+.profile-container {
+  row-gap: 2rem;
+}
+.profile-data {
+  display: grid;
+  text-align: center;
+}
+.profile-perfil {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    180deg,
+    hsla(var(--hue), var(--sat), var(--lig), 1) 0%,
+    hsla(var(--hue), var(--sat), var(--lig), 0.2) 100%
+  );
+
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile-perfil img{
+    width: 75px;
+}
+.profile-border{
+    border: 3.5px solid var(--first-color);
+    justify-self: center;
+    width: 115px;height: 115px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: .75rem;
+}
+.profile-name{
+    font-size: var(--h2-font-size);
+}
+
+.profile-profession{
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+.profile-social{
+    display: flex;
+    justify-content: center;
+    column-gap: .75rem;
+}
+.profile-social link{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    transition: .3s; 
+}
+
+.profile-social link:hover{
+    color: var(--first-color);
+}
+.profile-info{
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 2.5rem;
+}
+
+.profile-info-group{
+    text-align: center;
+}
+
+.profile-info-number{
+    font-size: var(--normal-font-size);
+    margin-bottom: .25rem;
+}
+.profile-info-description{
+    font-size: var(--smaller-font-size);
+    font-weight: 500;
+}
